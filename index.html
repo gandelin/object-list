@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Object List</title>
+    <meta charset="utf-8">
+    <script src="https://use.fontawesome.com/81140c216b.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/stylesheet.css">
+  </head>
+  <body>
+    <header>
+      <h1>My Contacts</h1>
+    </header>
+    <article>
+      <section id="contactEntry" class="show">
+        <form onsubmit="addContact()">
+          <label for="name">Name</label>
+          <input id="name" type="text">
+          <label for="phone">Phone</label>
+          <input id="phone" type="tel">
+          <input type="submit" name="Submit">
+        </form>
+      </section>
+      <section id=#contacts class="hide">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Phone Number</th>
+            </tr>
+          </thead>
+          <tbody id="contact-tbody">
+          </tbody>
+        </table>
+      </section>
+    </article>
+    <footer>
+      <p>HTML5-300 B Assignment 5, Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2017 Andelin Enterprises Inc.</p>
+    </footer>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/manage-contacts.js"></script>
+  </body>
+</html>
