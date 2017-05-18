@@ -21,16 +21,21 @@ label {
 }
 
 table {
-  margin: 2rem 0;
+  margin: 2rem 1rem;
   padding: 0;
 } 
 
-article {
-  height: 40rem;
+th {
+  background-color: dodgerblue;
 }
 
-.show {
-  display: block;
+table, th, td {
+  border: solid 1px black;
+  border-collapse: collapse;
+}
+
+article {
+  height: 40rem;
 }
 
 .hide {

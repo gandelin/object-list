@@ -1,5 +1,14 @@
 var contacts = [];
-var contactsVisible = false; 
+var contactsVisible = false;
+
+$("#cancel").click(function() {
+  togglePageVisibility();
+});
+
+$("#addNewItem").click(function() {
+  togglePageVisibility();
+});
+
 function addContact() {
   event.preventDefault();
   
@@ -7,6 +16,7 @@ function addContact() {
   contacts.push(newContact);
   updateContactTable();
   resetForm();
+  togglePageVisibility();
 }
 
 function getContact() {
@@ -25,14 +35,33 @@ function updateContactTable() {
     console.log(contacts[i].name);
     console.log(contacts[i].phone);
   }
+  var tbody = $("#contact-tbody");
+  tbody.empty();
+  contacts.forEach(function(contact) {
+    var contactRow = createTableRow(contact);
+    tbody.append(contactRow);
+  });
+}
+
+function createTableRow(contact) {
+  var tableRow = $('<tr>');
+  var contactName = $('<td>').text(contact.name);
+  tableRow.append(contactName);
+  var contactPhone = $('<td>').text(contact.phone);
+  tableRow.append(contactPhone);
+  return tableRow;
 }
 
 function togglePageVisibility() {
   if (contactsVisible) {
     // hide contacts, show form
+    $("#contactEntry").removeClass('hide');
+    $("#contacts").addClass('hide');
   }
   else {
     // show contacts, hide form
+    $("#contacts").removeClass('hide');
+    $("#contactEntry").addClass('hide');
   }
   contactsVisible = !contactsVisible;
 }
