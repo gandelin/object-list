@@ -9,15 +9,16 @@ $("#addNewItem").click(function() {
   togglePageVisibility();
 });
 
-function addContact() {
-  event.preventDefault();
+$('#addContact').submit(function(e) {
+  e.preventDefault();
   
   var newContact = getContact();
   contacts.push(newContact);
   updateContactTable();
   resetForm();
   togglePageVisibility();
-}
+  
+});
 
 function getContact() {
   return { name: $('#name').val(),
